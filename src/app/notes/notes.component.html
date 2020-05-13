@@ -1,0 +1,69 @@
+
+  <div id="outer">  
+    
+    <div id="inner">
+      <div class="input-group mb-3">
+        <div class="input-group-prepend">
+          <button type="button" (click)="addnote(input.value)"   class="btn btn-outline-secondary">Add</button>
+          <button type="button"  class="btn btn-outline-secondary dropdown-toggle dropdown-toggle-split" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+           priority <span class="sr-only">Toggle Dropdown</span>
+          </button>
+          <div class="dropdown-menu"  >
+            <a class="dropdown-item" (click)="priority('High')" >High</a>
+            <a class="dropdown-item" (click)="priority('Medium')">Medium</a>
+            <a class="dropdown-item" (click)="priority('Low')">Low</a>
+  
+          </div>
+        </div>
+        <input type="text" #input class="form-control" aria-label="Text input with segmented dropdown button">
+      </div>
+      <br>
+      <div *ngFor="let note of notes; let i=index">
+        <div *ngIf="notes[notes.length-i-1].priority=='High'">
+          
+        <div class="alert alert-danger" role="alert">
+       
+      
+            <strong>{{notes[notes.length-i-1].data}} </strong> 
+            <button type="button" class="close"   aria-label="Close">
+              <span aria-hidden="true" (click)="delete(note)">&times;</span>
+            </button>
+            <hr>
+            <span> {{notes[notes.length-i-1].priority}}</span>
+        </div>
+        
+      </div>
+      <div *ngIf="notes[notes.length-i-1].priority=='Low'">
+        <div class="alert alert-success" role="alert">
+       
+          <strong>{{notes[notes.length-i-1].data}}</strong> 
+          <button type="button" class="close"  aria-label="Close">
+            <span aria-hidden="true "  (click)="delete(note)">&times;</span>
+          </button>
+          <hr>
+          <span>{{notes[notes.length-i-1].priority}}</span>
+         
+        </div>
+        
+      </div>
+      <div *ngIf="notes[notes.length-i-1].priority=='Medium'">
+        <div class="alert alert-warning" role="alert">
+      
+          <strong> {{notes[notes.length-i-1].data}} </strong> 
+            <button type="button" class="close"  aria-label="Close">
+              <span aria-hidden="true"  (click)="delete(notes[notes.length-i-1])">&times;</span>
+            </button>
+            <hr>
+            <span>{{notes[notes.length-i-1].priority}}</span>
+         
+        </div>
+        
+      </div>
+      
+      </div>
+    
+      
+    
+    </div>
+
+</div>

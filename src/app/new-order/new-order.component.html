@@ -1,0 +1,66 @@
+
+ <div class="container">
+  <div class="row">
+    
+    <div class="col">
+      <button type="button" (click)="newmenucategory(1)" class="btn btn-lg btn-success"style="margin-right: 2px;">Add/Update Category</button>
+      <br>
+      <!-- for loop ll button grp -->
+      <div *ngFor="let btns of buttonsgrp ;">
+      <div class="btn-group btn-group-lg" role="group" aria-label="Basic example">
+       <!-- for loop lel buttons -->
+       <span *ngFor="let btn of btns; " >
+        <button  type="button" (click)="onclick(btn.id)" class="btn btn-lg btn-primary">{{btn.data.name}}  </button>
+      </span>
+      </div>
+        </div>
+        <br>
+        <div class="input-group mb-3">
+          <div class="input-group-prepend">
+    
+            <span class="input-group-text" id="basic-addon1">Table ID </span>
+          </div>
+          <input type="text" #tableid class="form-control" placeholder="" aria-label="Username" aria-describedby="basic-addon1">
+        </div>
+<br><br>
+
+      <div class="container">
+        <div class="row">
+          <div class="col">
+            <div *ngIf="clicked">
+              <div *ngFor="let btns of displaydetails ;">
+                <div class="card-group"style="width:100%;">
+                 <!-- for loop lel buttons -->
+                 <div *ngFor="let btn of btns; ">
+                  <div class="card" >
+                    <div class="card-body">
+                        <p style="text-align: center;">{{btn.data[0]}}</p>
+                      <a  class="btn btn-success" (click)="add(btn)" style=" width: 100%;">Add</a>
+                    </div>
+                  </div>
+                 </div>
+                </div>
+                  </div>
+            
+        </div>
+        </div>
+      </div>
+    </div>
+   
+  </div>
+  <div class="col">
+
+    <div class="card" style="width: 100%;">
+      <div class="card-header">
+      Orders
+      </div>
+      <ul class="list-group list-group-flush">
+        <div *ngFor="let Order of Orderlist"><li class="list-group-item">{{Order.data[0]}}__{{Order.data[1]*Order.qty}}__{{Order.qty}}  <a  class="btn btn-danger" (click)="delete(Order)" style=" float:right;">Delete</a></li></div>
+
+      </ul>
+    </div>
+    <a  class="btn btn-success" (click)="addorder(tableid.value,Orderlist)" style=" width: 100%;">Add</a>
+  </div>
+
+
+</div>

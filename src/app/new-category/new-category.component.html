@@ -1,0 +1,26 @@
+<div class="input-group mb-3" style="width:50%">
+    <div class="input-group-prepend">
+      <span class="input-group-text" id="basic-addon1">Category Name</span>
+    </div>
+    <input type="text" class="form-control" #catname placeholder="" aria-label="Username" aria-describedby="basic-addon1">
+  </div>
+  <div class="input-group mb-3" style="width:50%">
+    <div class="input-group-prepend">
+      <span class="input-group-text" id="basic-addon1">Category Details</span>
+    </div>
+    <input type="text" class="form-control" #catdetail placeholder="use ',' between each detail" aria-label="UserDetails" aria-describedby="basic-addon1">
+  </div>
+<div *ngIf="!error && Clicked " >
+    <div class="alert alert-success" role="alert" style="width: 50%;">
+        Done 
+      </div>
+</div>
+<div *ngIf="error && Clicked ">
+    <div class="alert alert-danger" role="alert" style="width: 50%;">
+       Please Renter your data in a correct form
+       </div>
+    </div>
+<button type="button" (click)="addcategory(catname,catdetail,fromwhere)" class="btn btn-success" style="margin-right: 2px;">Save</button>
+<button type="button" class="btn btn-primary " style="margin-right: 2px;">Clear</button>
+<button type="button" class="btn btn-danger" style="margin-right: 2px;">Cancel</button>
+

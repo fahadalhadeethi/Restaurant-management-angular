@@ -1,0 +1,47 @@
+<button type="button" (click)="neworder()" class="btn btn-warning" style="margin-left: 3px;">New Table</button>
+<div class="container">
+    
+   
+        <input #myinput  (change)="changed(myinput.value)" class="form-control mr-sm-2" type="text" placeholder="Search By Table Number" aria-label="Search">
+       
+    
+      
+      <br>
+    <div class="row">
+      <div *ngFor= "let table of tables">
+      <div class="col-sm">
+        <div class="card" style="width: 18rem;">
+          
+            <div class="card-body">
+              <h5 class="card-title">Table ID : {{table.id}}</h5>
+              <div *ngIf="table.Status=='empty' else elseblock">
+                <p class="card-text" >Status : <b style="color: green;">{{table.Status}} </b></p>
+                 </div>
+                 <ng-template #elseblock>
+                  <p class="card-text" >Status : <b style="color: red;">{{table.Status}} </b></p>
+                 </ng-template>
+              <a  class="btn btn-primary" (click)="clicked(table.id) "style="margin: 3px;">Reserve </a>
+              <a class="btn btn-danger"    (click)="delete(table.id)">Delete </a>
+              <div *ngIf="click[table.id]" >
+                <div class="input-group mb-3">
+                  <div class="input-group-prepend">
+                    <span class="input-group-text" id="basic-addon1">Date</span>
+                  </div>
+                  <input type="text" class="form-control" placeholder="DD/MM/YYY" aria-label="Username" aria-describedby="basic-addon1">
+                </div>
+                <div class="input-group mb-3">
+                  <div class="input-group-prepend">
+                    <span class="input-group-text" id="basic-addon1">Time</span>
+                  </div>
+                  <input type="text" class="form-control" placeholder="HH:MM" aria-label="Username" aria-describedby="basic-addon1">
+                </div>   
+                <button type="button" class="btn btn-success" style="margin-right: 2px;">Save</button>             
+
+              </div>
+            </div>
+          </div>
+      </div>
+      </div>
+      </div>
+      
+  </div>

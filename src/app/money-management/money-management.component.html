@@ -1,0 +1,52 @@
+
+  <div class="container">
+    <div class="row">
+      <div class="col">
+     
+        <button (click)="Category(0)" type="button" class="btn btn-lg btn-success"style="margin-right: 2px;">Add/Update Category</button>
+        <br>
+    
+     <div *ngFor="let btngrp of buttonsgrp">
+      <div class="btn-group" role="group" aria-label="...">
+       
+        <button *ngFor="let btngrpp of btngrp" (click)="onclick(btngrpp.id,btngrpp.data)" type="button" class="btn btn-lg btn-primary"style="margin-right: 2px;">{{btngrpp.data.name}}  </button>
+      
+    
+      
+      </div>
+     </div>
+
+      </div>
+      <div class="col"  >
+       <!-- <div class="input-group mb-3">
+            <div class="input-group-prepend">
+              <span class="input-group-text" id="basic-addon1">Subscription :</span>
+            </div>
+            <input type="text" class="form-control" placeholder="" aria-label="Username" aria-describedby="basic-addon1">
+          </div>
+          
+          <div class="input-group mb-3">
+            <div class="input-group-prepend">
+              <span class="input-group-text" id="basic-addon1">Amount :</span>
+            </div>
+            <input type="text" class="form-control" placeholder="" aria-label="Username" aria-describedby="basic-addon1">
+          </div>
+          <div class="input-group mb-3">
+            <div class="input-group-prepend">
+              <span class="input-group-text" id="basic-addon1">Unit :</span>
+            </div>
+            <input type="text" class="form-control" placeholder="" aria-label="Username" aria-describedby="basic-addon1">
+          </div>
+          <div class="input-group mb-3">
+            <div class="input-group-prepend">
+              <span class="input-group-text" id="basic-addon1">Price :</span>
+            </div>
+            <input type="text" class="form-control" placeholder="" aria-label="Username" aria-describedby="basic-addon1">
+          </div>
+        -->
+        <app-input-view [id]="id"></app-input-view>
+         
+    </div>
+    </div>
+    </div>
+    

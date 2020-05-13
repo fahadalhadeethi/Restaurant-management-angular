@@ -1,0 +1,9 @@
+#outer {
+    width: 100%;
+    text-align: center;
+  }
+  
+  #inner {
+    width: 50%;
+    display: inline-block;
+  }

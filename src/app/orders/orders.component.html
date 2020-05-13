@@ -1,0 +1,26 @@
+<button type="button" (click)="neworder(0)" class="btn btn-warning" style="margin-left: 3px;">New Order</button>
+<div class="container">
+    
+   
+        <input #myinput  (change)="changed(myinput.value)" class="form-control mr-sm-2" type="text" placeholder="Search By Table Number" aria-label="Search">
+       
+    
+      
+      <br>
+    <div class="row">
+      <div *ngFor= "let order of Orders">
+      <div class="col-sm">
+        <div class="card" style="width: 18rem;">
+          
+            <div class="card-body">
+              <h5 class="card-title">Table ID : {{order.data.table_id}}</h5>
+       
+              <a  class="btn btn-primary" style="margin: 3px;">View Details </a>
+              <a class="btn btn-danger"    (click)="delete(order.data)">Delete </a>
+            </div>
+          </div>
+      </div>
+      </div>
+      </div>
+      
+  </div>

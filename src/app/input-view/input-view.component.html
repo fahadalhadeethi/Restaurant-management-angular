@@ -1,0 +1,16 @@
+<div *ngIf="data!=undefined">
+<h2> {{data.name}}</h2>
+<div *ngFor= "let v of data.Details ; ">
+   
+    <div class="input-group mb-3">
+        <div class="input-group-prepend">
+          <span class="input-group-text" id="basic-addon1">{{v}}</span>
+        </div>
+        <input type="text" class="form-control" placeholder="" aria-label="Username" aria-describedby="basic-addon1">
+      </div>
+   
+    </div>
+    <button type="button" class="btn btn-success" style="margin-right: 2px;">Save</button>
+    <button type="button" class="btn btn-primary " style="margin-right: 2px;">Clear</button>
+    <button type="button" class="btn btn-danger" style="margin-right: 2px;">Cancel</button>
+  </div>
